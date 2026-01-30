@@ -1,5 +1,36 @@
 ---
+import Accordion from "./Accordion.astro";
+import BuyButton from "./BuyButton.astro";
 
+const { dataProduct } = Astro.props;
+
+const { Content } = await dataProduct.render();
 ---
 
-<div class="card"></div>
+<div
+  class="max-w-sm mx-auto h-fit pb-4 flex flex-col items-center rounded-3xl transition-all duration-300 hover:-translate-y-3 hover:scale-[1.02] border border-transparent hover:border-[#fcbe21]/30 shadow-md hover:shadow-2xl"
+  id={dataProduct.id}
+  data-aos="zoom-in-up"
+  data-aos-anchor={dataProduct.id}
+  data-aos-delay="200"
+>
+  <div class="relative z-10">
+    <img
+      src={dataProduct.data.image}
+      alt={dataProduct.data.name}
+      class="rounded-2xl"
+    />
+  </div>
+
+  <div class="w-full -mt-3 relative z-0">
+    <Accordion title={dataProduct.data.name}>
+      <Content />
+    </Accordion>
+    <div class="flex justify-center gap-4">
+      <span class="font-bold text-green-500 text-3xl my-3"
+        >{dataProduct.data.price}</span
+      >
+      <BuyButton />
+    </div>
+  </div>
+</div>

@@ -2,18 +2,20 @@
 import Card from "./Card.astro";
 
 const { regulerProduct } = Astro.props;
+console.log(regulerProduct);
 ---
 
-<section class="py-20">
+<section class="py-20 reguler-series">
+  <hr class="w-3/4 text-gray-400 mx-auto" />
   <h1
-    class="font-accent text-[#161511] font-bold text-6xl text-center mb-2 p-2"
+    class="font-accent text-[#161511] font-bold text-6xl text-center my-10"
+    data-aos="fade-down"
+    data-aos-anchor=".reguler-series"
+    data-aos-delay="600"
   >
     Another Series
   </h1>
-  <Card />
-
-  <!-- {regulerProduct.map((p) => 
-  <h1>{p.data.name}</h1>
-  <img src={p.data.image} alt={p.data.image} />
-  )} -->
+  <div class="grid grid-cols-1 md:grid-cols-3">
+    {regulerProduct.map((p) => <Card dataProduct={p} />)}
+  </div>
 </section>

@@ -1,6 +1,7 @@
 ---
 "name": "Kurma Sukari"
 "category": "Reguler Series"
+"price": "Rp. 82.400"
 "image": "/src/assets/sukari.jpeg"
 ---
 

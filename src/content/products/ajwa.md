@@ -1,6 +1,7 @@
 ---
 "name": "Kurma Ajwa"
 "category": "Reguler Series"
+"price": "Rp. 175.000"
 "image": "/src/assets/ajwa.jpeg"
 ---
 

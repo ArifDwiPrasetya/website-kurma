@@ -1,32 +1,30 @@
 ---
 import { Icon } from "astro-icon/components";
 
-const { title, description } = Astro.props;
+const { title } = Astro.props;
 ---
 
-<div class="max-w-md mx-auto space-y-4">
-  <details class="group border-b border-gray-200 pb-4">
+<div class="max-w-md mx-auto bg-transparent">
+  <details class="group">
     <summary
-      class="flex justify-between items-center cursor-pointer list-none py-4"
+      class="flex gap-4 justify-center items-center cursor-pointer list-none py-4"
     >
-      <span
-        class="text-xl font-bold text-[#2c2923] hover:text-[#fcbe21] transition-colors"
-      >
+      <span class="text-2xl font-arabic font-bold text-black">
         {title}
       </span>
       <Icon
         name="lucide:chevron-down"
-        class="w-6 h-6 text-[#fcbe21] transition-transform duration-500 group-open:rotate-180"
+        class="w-6 h-6 text-black transition-transform duration-500 group-open:rotate-180"
       />
     </summary>
 
     <div
       class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-in-out group-open:grid-rows-[1fr]"
     >
-      <div class="overflow-hidden">
-        <p class="text-gray-600 leading-relaxed pt-2 text-justify">
-          {description}
-        </p>
+      <div
+        class="overflow-hidden px-3 mb-3 mx-auto text-gray-600 leading-relaxed pt-2 text-justify"
+      >
+        <slot />
       </div>
     </div>
   </details>

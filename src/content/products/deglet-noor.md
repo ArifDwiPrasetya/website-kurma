@@ -1,6 +1,7 @@
 ---
 "name": "Kurma Deglet Noor"
 "category": "Reguler Series"
+"price": "Rp. 77.500"
 "image": "/src/assets/deglet_noor.jpeg"
 ---
 
