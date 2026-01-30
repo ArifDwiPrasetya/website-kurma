@@ -1,0 +1,55 @@
+@import "tailwindcss";
+@import "@fontsource/amiri";
+@import "@fontsource/caveat";
+@import "@fontsource/dancing-script";
+
+
+@theme {
+    --font-arabic : "Amiri", serif;
+    --font-handwrite : "Caveat", serif;
+    --font-accent: "Dancing Script", cursive;
+}
+
+/* Tambahkan utilitas kustom di bawah @theme */
+@utility text-outline {
+  -webkit-text-stroke: 1px white;
+}
+
+@utility text-outline-thick {
+  -webkit-text-stroke: 2px #d4af37; /* Warna emas untuk seri Premium */
+}
+
+
+ body{
+    cursor:default;
+}
+
+
+
+/* Animasi Masuk Logo */
+@keyframes logoEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0px);
+  }
+}
+
+/* Animasi Pendaran Cahaya (Glow) */
+@keyframes pulseSlow {
+  0%, 100% { opacity: 0.15; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.3; transform: translate(-50%, -50%) scale(1.2); }
+}
+
+.animate-logo-entrance {
+  animation: logoEntrance 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 3s infinite ease-in-out;
+}

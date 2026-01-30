@@ -1,0 +1,56 @@
+<div
+  id="preloader"
+  class="fixed inset-0 z-9999 flex flex-col items-center justify-center bg-[#161511] transition-all duration-1000 ease-in-out"
+>
+  <div class="relative flex flex-col items-center">
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-[#fcbe21] opacity-20 blur-[80px] rounded-full animate-pulse-slow"
+    >
+    </div>
+
+    <div class="relative z-10 flex flex-col items-center">
+      <img
+        src="/logo.png"
+        alt="Lapak Kurma"
+        class="h-28 md:h-36 w-auto mb-6 opacity-0 animate-logo-entrance filter drop-shadow-[0_0_20px_rgba(252,190,33,0.4)]"
+      />
+
+      <div class="w-40 h-px bg-white/10 relative overflow-hidden">
+        <div
+          id="progress-bar"
+          class="absolute left-0 top-0 h-full bg-linear-to-r from-transparent via-[#fcbe21] to-transparent w-0 transition-all duration-700 ease-out"
+        >
+        </div>
+      </div>
+
+      <p
+        class="mt-6 text-[#fcbe21] font-arabic tracking-[0.4em] text-[10px] uppercase opacity-50"
+      >
+        Authentic Palestinian Dates
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function handlePreloader() {
+    const loader = document.getElementById("preloader");
+    const progress = document.getElementById("progress-bar");
+
+    if (progress) progress.style.width = "100%";
+
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        if (loader) {
+          loader.classList.add("opacity-0", "scale-105", "blur-sm");
+          setTimeout(() => {
+            loader.style.display = "none";
+          }, 1000);
+        }
+      }, 1500);
+    });
+  }
+
+  handlePreloader();
+  document.addEventListener("astro:page-load", handlePreloader);
+</script>

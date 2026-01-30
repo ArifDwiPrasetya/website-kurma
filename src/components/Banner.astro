@@ -1,0 +1,68 @@
+---
+import Image from "astro/components/Image.astro";
+import bannerImage from "../assets/banner.png";
+import kurmaImage from "../assets/kurma.png";
+---
+
+<section class="relative h-screen w-full overflow-hidden">
+  <Image
+    src={bannerImage}
+    alt="background"
+    class="absolute inset-0 h-full w-full object-cover animate-slow-zoom"
+    quality="max"
+  />
+  <div class="banner-content absolute z-10 inset-0 flex items-center">
+    <Image
+      src={kurmaImage}
+      alt="kurma banner"
+      loading="eager"
+      fetchpriority="high"
+      class="w-xs ml-60"
+    />
+    <div class="wrap-tagline">
+      <h3
+        class="text-8xl font-bold font-handwrite text-[#161511] drop-shadow-[0_-2PX_2px_#FFFFFF]"
+      >
+        Temukan
+      </h3>
+      <div class="flex justify-start items-baseline gap-5">
+        <h1
+          class="font-arabic text-9xl drop-shadow-[0_-2px_2px_#FFFFFF] font-bold text-[#161511]"
+        >
+          Kurmamu
+        </h1>
+        <button data-scroll-to="premium-product">
+          <h3
+            class="cta-banner text-5xl font-black font-arabic text-[#161511] drop-shadow-[0_-2PX_2px_#FFFFFF] hover:cursor-pointer hover:[text-shadow:0_0_15px_#fcbe21]"
+          >
+            di Sini
+          </h3>
+        </button>
+      </div>
+      <h4
+        class="text-4xl font-black font-arabic text-[#161511] drop-shadow-[0_-2PX_2px_#FFFFFF]"
+      >
+        tempatnya kurma-kurma pilihan dan berkualitas
+      </h4>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Membuat animasi custom */
+
+  @keyframes slowZoom {
+    0% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .animate-slow-zoom {
+    /* background-color: #fcbe21; */
+    /* Animasi berjalan selama 10 detik agar halus, sekali jalan, dan tertahan di skala akhir */
+    animation: slowZoom 10s ease-out forwards;
+  }
+</style>

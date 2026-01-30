@@ -1,0 +1,47 @@
+[
+  {
+    "text": "Sumber energi instan",
+    "icon": "lucide:zap",
+    "color": "text-orange-500"
+  },
+  {
+    "text": "Meningkatkan imunitas",
+    "icon": "lucide:shield-plus",
+    "color": "text-blue-500"
+  },
+  {
+    "text": "Melancarkan pencernaan",
+    "icon": "lucide:leaf",
+    "color": "text-green-500"
+  },
+  {
+    "text": "Baik untuk ibu hamil",
+    "icon": "lucide:baby",
+    "color": "text-pink-500"
+  },
+  {
+    "text": "Membantu meningkatkan ASI",
+    "icon": "lucide:droplets",
+    "color": "text-sky-400"
+  },
+  {
+    "text": "Menyehatkan kulit",
+    "icon": "lucide:sparkles",
+    "color": "text-yellow-400"
+  },
+  {
+    "text": "Menjaga kesehatan jantung",
+    "icon": "lucide:heart-pulse",
+    "color": "text-red-500"
+  },
+  {
+    "text": "Meningkatkan fungsi otak",
+    "icon": "lucide:brain",
+    "color": "text-purple-500"
+  },
+  {
+    "text": "Menjaga kesehatan tulang",
+    "icon": "lucide:bone",
+    "color": "text-slate-400"
+  }
+]

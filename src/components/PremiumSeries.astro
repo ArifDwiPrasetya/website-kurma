@@ -1,0 +1,92 @@
+---
+import TopWave from "./TopWave.astro";
+import BottomWave from "./BottomWave.astro";
+import { Image } from "astro:assets";
+import medjoulImage from "../assets/kurmaMedjoul.jpeg";
+import ustadzImage from "../assets/ustadzHusain.jpeg";
+import watan250Image from "../assets/watan250.jpeg";
+import watan500Image from "../assets/watan500.jpeg";
+import watan1kgImage from "../assets/watan1kg.jpeg";
+import BuyButton from "./BuyButton.astro";
+
+const { premiumProduct } = Astro.props;
+const product = premiumProduct[0];
+const { Content } = await product.render();
+---
+
+<TopWave />
+<section
+  class="flex flex-col justify-center items-center bg-[#2c2923] pt-3 pb-5"
+>
+  <div class="premium">
+    <div class="flex">
+      <div class="grid grid-cols-1 md:grid-cols-2">
+        <div class="image-wrapper">
+          <h1
+            class="font-accent text-[#ffcc02] text-shadow-[0_0_15px_#fcbe21] font-bold text-6xl text-center mb-2 p-2"
+          >
+            {product.data.category}
+          </h1>
+          <Image
+            src={medjoulImage}
+            alt="Kurma Medjoul Palestina"
+            class="w-md rounded-3xl m-auto"
+          />
+        </div>
+        <div class="content-wrapper p-3">
+          <h2 class="text-white font-arabic font-bold text-4xl my-10">
+            {product.data.name}
+          </h2>
+          <Content />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="review">
+    <h1 class="text-white font-arabic font-bold text-4xl my-10 text-center">
+      Approved by Ustadz Husain Gaza
+    </h1>
+    <Image src={ustadzImage} alt="Ustadz Husain" class="w-xl rounded-4xl" />
+  </div>
+</section>
+<BottomWave />
+<section
+  class="grid grid-cols-1 md:grid-cols-3 justify-center items-center mt-50"
+  id="premium-product"
+>
+  <div class="card flex flex-col justify-center items-center">
+    <Image
+      src={watan250Image}
+      alt="Watan 250gr"
+      class="rounded-2xl w-sm transition-transform group-hover:rotate-12"
+    />
+    <span class="font-bold text-green-500 text-3xl my-3"
+      >{product.data.price.smallPack}</span
+    >
+    <BuyButton link="/" />
+  </div>
+  <div class="card flex flex-col justify-center items-center">
+    <Image src={watan500Image} alt="Watan 5000gr" class="rounded-2xl w-sm" />
+    <span class="font-bold text-green-500 text-3xl my-3"
+      >{product.data.price.mediumPack}</span
+    >
+    <BuyButton link="/" />
+  </div>
+  <div class="card flex flex-col justify-center items-center">
+    <Image src={watan1kgImage} alt="Watan 1kg" class="rounded-2xl w-sm" />
+    <span class="font-bold text-green-500 text-3xl my-3"
+      >{product.data.price.largePack}</span
+    >
+    <BuyButton link="/" />
+  </div>
+</section>
+
+<style>
+  /* Custom style text di dalam tag Content */
+  .content-wrapper :global(p) {
+    color: aliceblue;
+    width: 80%;
+    text-align: justify;
+    font-size: larger;
+  }
+</style>

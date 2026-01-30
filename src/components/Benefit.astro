@@ -1,0 +1,51 @@
+---
+// import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
+import maskotImage from "../assets/maskot.png";
+import splashImage from "../assets/lintsplash.png";
+import { Icon } from "astro-icon/components";
+import dataManfaat from "../data/manfaat.json";
+---
+
+<section
+  class="mt-5 grid grid-cols-1 md:grid-cols-2 items-center md:mx-20 benefit overflow-hidden"
+>
+  <div
+    class="w-full flex justify-center"
+    data-aos="fade-right"
+    data-aos-anchor=".benefit"
+    data-aos-delay="300"
+  >
+    <Image
+      src={maskotImage}
+      alt="Maskot Kurmamu"
+      class="rounded-full shadow-lg bg-[#f2ebdd]"
+    />
+  </div>
+
+  <div
+    class="flex flex-col items-center"
+    data-aos="fade-left"
+    data-aos-anchor=".benefit"
+    data-aos-delay="600"
+  >
+    <h2 class="text-5xl mt-3 font-bold font-arabic">
+      Kenapa sih harus makan kurma ?
+    </h2>
+    <div class="relative">
+      <h3 class="text-3xl font-bold font-arabic absolute inset-3">
+        Si Kecil Booster Energi
+      </h3>
+      <Image src={splashImage} alt="splash" class="w-80" />
+    </div>
+    <h2 class="text-3xl font-bold mb-3">Manfaat Kurma</h2>
+    {
+      dataManfaat.map((item) => (
+        <div class="flex items-center gap-3 p-2 rounded-xl shadow-sm w-100">
+          <Icon name={item.icon} class={`w-6 h-6 ${item.color}`} />
+          <span class="font-medium text-2xl text-gray-600">{item.text}</span>
+        </div>
+      ))
+    }
+  </div>
+</section>

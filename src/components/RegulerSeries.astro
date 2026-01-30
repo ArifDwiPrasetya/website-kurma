@@ -1,0 +1,19 @@
+---
+import Card from "./Card.astro";
+
+const { regulerProduct } = Astro.props;
+---
+
+<section class="py-20">
+  <h1
+    class="font-accent text-[#161511] font-bold text-6xl text-center mb-2 p-2"
+  >
+    Another Series
+  </h1>
+  <Card />
+
+  <!-- {regulerProduct.map((p) => 
+  <h1>{p.data.name}</h1>
+  <img src={p.data.image} alt={p.data.image} />
+  )} -->
+</section>

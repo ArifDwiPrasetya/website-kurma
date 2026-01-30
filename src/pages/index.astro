@@ -1,11 +1,42 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import { getCollection } from "astro:content";
+import MainLayout from "../layouts/Layout.astro";
+import Banner from "../components/Banner.astro";
+import Benefit from "../components/Benefit.astro";
+import PremiumSeries from "../components/PremiumSeries.astro";
+import RegulerSeries from "../components/RegulerSeries.astro";
+import Preloader from "../components/Preloader.astro";
+import Footer from "../components/Footer.astro";
+// import { componentIsHTMLElement } from "astro/runtime/server/render/dom.js";
+import "aos/dist/aos.css";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const products = await getCollection("products");
+
+const regulerProduct = products.filter(
+  (p) => p.data.category === "Reguler Series",
+);
+const premiumProduct = products.filter(
+  (p) => p.data.category === "Premium Series",
+);
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<script>
+  import AOS from "aos";
+
+  AOS.init({
+    // Global Settings yang ada di dokumentasi:
+    duration: 1000, // Durasi animasi (ms)
+    once: true, // Animasi hanya jalan sekali saat scroll ke bawah
+    offset: 100, // Jarak (px) elemen dari layar sebelum animasi dipicu
+    easing: "ease-out-back", // Jenis pergerakan animasi
+  });
+</script>
+
+<MainLayout>
+  <Preloader />
+  <Banner />
+  <Benefit />
+  <PremiumSeries premiumProduct={premiumProduct} />
+  <RegulerSeries regulerProduct={regulerProduct} />
+  <Footer />
+</MainLayout>
