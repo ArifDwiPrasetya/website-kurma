@@ -11,4 +11,10 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  // Tambahkan atau sesuaikan bagian image di bawah ini
+  image: {
+    service: {
+      entrypoint: "astro/assets/services/sharp", // Pastikan ini benar
+    },
+  },
 });
