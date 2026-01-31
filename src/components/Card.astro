@@ -5,13 +5,13 @@ import BuyButton from "./BuyButton.astro";
 const { dataProduct } = Astro.props;
 
 const { Content } = await dataProduct.render();
+console.log(dataProduct.id);
 ---
 
 <div
-  class="max-w-sm mx-auto h-fit pb-4 flex flex-col items-center rounded-3xl transition-all duration-300 hover:-translate-y-3 hover:scale-[1.02] border border-transparent hover:border-[#fcbe21]/30 shadow-md hover:shadow-2xl"
-  id={dataProduct.id}
+  class=`max-w-sm mx-auto h-fit pb-4 flex flex-col items-center rounded-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02] border border-transparent hover:border-[#fcbe21]/30 shadow-md hover:shadow-2xl ${dataProduct.slug} `
   data-aos="zoom-in-up"
-  data-aos-anchor={dataProduct.id}
+  data-aos-anchor=`${"."+dataProduct.slug}`
   data-aos-delay="200"
 >
   <div class="relative z-10">

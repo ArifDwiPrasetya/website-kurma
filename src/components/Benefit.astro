@@ -29,19 +29,19 @@ import dataManfaat from "../data/manfaat.json";
     data-aos-anchor=".benefit"
     data-aos-delay="600"
   >
-    <h2 class="text-5xl mt-3 font-bold font-arabic">
+    <h2 class="text-4xl md:text-5xl text-center mt-3 font-bold font-arabic">
       Kenapa sih harus makan kurma ?
     </h2>
     <div class="relative">
-      <h3 class="text-3xl font-bold font-arabic absolute inset-3">
+      <h3 class="text-3xl font-bold font-arabic text-center absolute inset-3">
         Si Kecil Booster Energi
       </h3>
-      <Image src={splashImage} alt="splash" class="w-80" />
+      <Image src={splashImage} alt="splash" class="w-full md:w-80" />
     </div>
-    <h2 class="text-3xl font-bold mb-3">Manfaat Kurma</h2>
+    <h2 class="text-3xl font-bold mb-3 text-center">Manfaat Kurma</h2>
     {
       dataManfaat.map((item) => (
-        <div class="flex items-center gap-3 p-2 rounded-xl shadow-sm w-100">
+        <div class="flex items-center gap-3 p-2 mx-2 rounded-xl shadow-sm w-100">
           <Icon name={item.icon} class={`w-6 h-6 ${item.color}`} />
           <span class="font-medium text-2xl text-gray-600">{item.text}</span>
         </div>

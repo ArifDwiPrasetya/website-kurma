@@ -18,28 +18,26 @@ const { Content } = await product.render();
 <section
   class="flex flex-col justify-center items-center bg-[#2c2923] pt-3 pb-5"
 >
-  <div class="premium">
-    <div class="flex">
-      <div class="grid grid-cols-1 md:grid-cols-2">
-        <div class="image-wrapper">
-          <h1
-            class="font-accent text-[#ffcc02] text-shadow-[0_0_15px_#fcbe21] font-bold text-6xl text-center mb-2 p-2"
-          >
-            {product.data.category}
-          </h1>
-          <Image
-            src={medjoulImage}
-            alt="Kurma Medjoul Palestina"
-            class="w-md rounded-3xl m-auto"
-          />
-        </div>
-        <div class="content-wrapper p-3">
-          <h2 class="text-white font-arabic font-bold text-4xl my-10">
-            {product.data.name}
-          </h2>
-          <Content />
-        </div>
-      </div>
+  <div class="grid grid-cols-1 md:grid-cols-2">
+    <div class="image-wrapper">
+      <h1
+        class="font-accent text-[#ffcc02] text-shadow-[0_0_15px_#fcbe21] font-bold text-6xl text-center mb-2 p-2"
+      >
+        {product.data.category}
+      </h1>
+      <Image
+        src={medjoulImage}
+        alt="Kurma Medjoul Palestina"
+        class="w-md rounded-3xl m-auto"
+      />
+    </div>
+    <div class="content-wrapper">
+      <h2
+        class="text-white font-arabic font-bold w-4/5 mx-auto text-4xl my-10 text-center md:text-start"
+      >
+        {product.data.name}
+      </h2>
+      <Content />
     </div>
   </div>
   <div class="review">
@@ -51,7 +49,7 @@ const { Content } = await product.render();
 </section>
 <BottomWave />
 <section
-  class="grid grid-cols-1 md:grid-cols-3 justify-center items-center mt-50"
+  class="grid grid-cols-1 md:grid-cols-3 justify-center items-center mt-50 gap-10"
   id="premium-product"
 >
   <div class="card flex flex-col justify-center items-center">
@@ -86,6 +84,7 @@ const { Content } = await product.render();
   .content-wrapper :global(p) {
     color: aliceblue;
     width: 80%;
+    margin: auto;
     text-align: justify;
     font-size: larger;
   }
