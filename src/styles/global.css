@@ -53,3 +53,18 @@
 .animate-pulse-slow {
   animation: pulseSlow 3s infinite ease-in-out;
 }
+
+
+
+/* .social-share .astro-social-share {
+        margin: 20px 0px;
+        height: 24px;
+    }
+.social-share .astro-social-share a {
+        text-decoration: none;
+        margin-right: 10px;
+    } */
+.social-share .astro-social-share svg {
+        height: 35px;
+        margin-right: 10px;
+    }

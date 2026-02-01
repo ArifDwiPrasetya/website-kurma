@@ -1,0 +1,27 @@
+---
+import {
+  FacebookShareButton,
+  ThreadsShareButton,
+  TwitterShareButton,
+  WhatsAppShareButton,
+  SocialShare,
+} from "astro-social-share";
+
+const BUTTONS = [
+  WhatsAppShareButton,
+  FacebookShareButton,
+  ThreadsShareButton,
+  TwitterShareButton,
+];
+---
+
+<section class="p-10 flex flex-col justify-center items-center social-share">
+  <h2 class="font-bold font-arabic text-5xl">
+    Share kurma favoritmu ke sanak saudara !!!
+  </h2>
+  <SocialShare
+    buttons={BUTTONS}
+    description="Tempatnya kurma pilihan berkualitas"
+    title="Kurmamu"
+  />
+</section>

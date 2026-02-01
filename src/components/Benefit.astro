@@ -8,7 +8,7 @@ import dataManfaat from "../data/manfaat.json";
 ---
 
 <section
-  class="mt-5 grid grid-cols-1 md:grid-cols-2 items-center md:mx-20 benefit overflow-hidden"
+  class="py-5 grid grid-cols-1 md:grid-cols-2 items-center md:mx-20 benefit overflow-hidden"
 >
   <div
     class="w-full flex justify-center"
@@ -41,9 +41,11 @@ import dataManfaat from "../data/manfaat.json";
     <h2 class="text-3xl font-bold mb-3 text-center">Manfaat Kurma</h2>
     {
       dataManfaat.map((item) => (
-        <div class="flex items-center gap-3 p-2 mx-2 rounded-xl shadow-sm w-100">
+        <div class="flex items-center gap-3 p-2 mx-5 rounded-xl shadow-sm w-90 md:w-100">
           <Icon name={item.icon} class={`w-6 h-6 ${item.color}`} />
-          <span class="font-medium text-2xl text-gray-600">{item.text}</span>
+          <span class="font-medium text-xl md:text-2xl text-gray-600">
+            {item.text}
+          </span>
         </div>
       ))
     }

@@ -9,6 +9,7 @@ import Preloader from "../components/Preloader.astro";
 import Footer from "../components/Footer.astro";
 // import { componentIsHTMLElement } from "astro/runtime/server/render/dom.js";
 import "aos/dist/aos.css";
+import Share from "../components/Share.astro";
 
 const products = await getCollection("products");
 
@@ -36,7 +37,9 @@ const premiumProduct = products.filter(
   <Preloader />
   <Banner />
   <Benefit />
+  <hr />
   <PremiumSeries premiumProduct={premiumProduct} />
   <RegulerSeries regulerProduct={regulerProduct} />
+  <Share />
   <Footer />
 </MainLayout>

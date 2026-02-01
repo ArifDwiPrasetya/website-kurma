@@ -16,6 +16,8 @@ import kurmaImage from "../assets/kurma.png";
     widths={[240, 540, 720, 1080, bannerImage.width]}
     sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${bannerImage.width}px`}
     alt="background"
+    loading="eager"
+    fetchpriority="high"
     class="absolute inset-0 h-full w-full object-cover animate-slow-zoom"
   />
   <div
@@ -28,13 +30,13 @@ import kurmaImage from "../assets/kurma.png";
       fetchpriority="high"
       class="w-xs"
     />
-    <div class="wrap-tagline w-3/4 md:w-fit">
+    <div class="wrap-tagline mx-4 md:mx-0">
       <h3
         class="text-5xl md:text-8xl font-bold font-handwrite text-[#161511] drop-shadow-[0_-2PX_2px_#FFFFFF]"
       >
         Temukan
       </h3>
-      <div class="flex flex-wrap justify-start items-baseline gap-5">
+      <div class="flex flex-wrap justify-start items-baseline gap-2 md:gap-5">
         <h1
           class="font-arabic text-6xl md:text-9xl drop-shadow-[0_-2px_2px_#FFFFFF] font-bold text-[#161511]"
         >
