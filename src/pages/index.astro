@@ -10,6 +10,7 @@ import Footer from "../components/Footer.astro";
 // import { componentIsHTMLElement } from "astro/runtime/server/render/dom.js";
 import "aos/dist/aos.css";
 import Share from "../components/Share.astro";
+import { SEO } from "astro-seo";
 
 const products = await getCollection("products");
 
@@ -34,10 +35,28 @@ const premiumProduct = products.filter(
 </script>
 
 <MainLayout>
+  <SEO
+    slot="seo"
+    title="Kurmamu - Cari kurmamu di sini !!!"
+    description="Selamat datang di website Kurmamu, laman digital yang menyediakan kurma pilihan dan berkualitas. Kurma yang kamu cari ada di sini dengan berbagai kualitas dan ukuran. Ayo sehatkan dirimu dengan ikhtiar konsumsi kurma setiap hari"
+    twitter={{
+      creator: "@yusuffazeri",
+      card: "summary_large_image",
+    }}
+    openGraph={{
+      basic: {
+        type: "website",
+        title: "Kurmamu - Cari kurmamu di sini !!!",
+        image: "/ogImageKurmamu.png",
+      },
+      image: {
+        alt: "Thumbnail",
+      },
+    }}
+  />
   <Preloader />
   <Banner />
   <Benefit />
-  <hr />
   <PremiumSeries premiumProduct={premiumProduct} />
   <RegulerSeries regulerProduct={regulerProduct} />
   <Share />
