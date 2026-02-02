@@ -5,6 +5,7 @@ import icon from "astro-icon"; // 1. Import library icon
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://website-kurma.edgeone.dev",
   integrations: [
     icon(), // 2. Tambahkan ini di array integrations
   ],
